@@ -77,7 +77,7 @@ public class Reciever {
 	
 	
 	
-	
+				//Copyright © 2018 by Evan Coats
 	
 	}
 	

@@ -133,6 +133,6 @@ final Font HUGE_FONT = new Font("Normal font",Font.BOLD,65);
 	
 	
 	
-	
+	//Copyright © 2018 by Evan Coats
 	
 }

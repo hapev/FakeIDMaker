@@ -6,3 +6,4 @@ public static void main(String[] args) {
 	r.recieveData();
 }
 }
+//Copyright © 2018 by Evan Coats
