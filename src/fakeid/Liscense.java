@@ -18,31 +18,32 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Liscense extends JPanel {
-LocalDate dob;
-JFrame frame;
-LocalDate expiration;
-String height;
-String weight;
-String hair;
-String eyes;
-String sex;
-String name;
-String address;
-String pathChosen;
-BufferedImage template;
-BufferedImage pic;
-Image resizedPic;
-String city;
-String zip;
-String state;
-String fullAddress;
+	LocalDate dob;
+	JFrame frame;
+	LocalDate expiration;
+	String height;
+	String weight;
+	String hair;
+	String eyes;
+	String sex;
+	String name;
+	String address;
+	String pathChosen;
+	BufferedImage template;
+	BufferedImage pic;
+	Image resizedPic;
+	String city;
+	String zip;
+	String state;
+	String fullAddress;
 
-final Font NORMAL_FONT = new Font("Normal font",Font.ROMAN_BASELINE,20);
-final Font SMALLER_FONT = new Font("Normal font",Font.ROMAN_BASELINE,15);
-final Font BIG_FONT = new Font("Normal font",Font.ROMAN_BASELINE,35);
-final Font HUGE_FONT = new Font("Normal font",Font.BOLD,65);
-	public Liscense(LocalDate dob, LocalDate expiration, String height, String weight, String hair, String eyes, String sex, String name, 
-			String address, String pathChosen, String city, String zip, String state ) {
+	final Font NORMAL_FONT = new Font("Normal font", Font.ROMAN_BASELINE, 20);
+	final Font SMALLER_FONT = new Font("Normal font", Font.ROMAN_BASELINE, 15);
+	final Font BIG_FONT = new Font("Normal font", Font.ROMAN_BASELINE, 35);
+	final Font HUGE_FONT = new Font("Normal font", Font.BOLD, 65);
+
+	public Liscense(LocalDate dob, LocalDate expiration, String height, String weight, String hair, String eyes,
+			String sex, String name, String address, String pathChosen, String city, String zip, String state) {
 		this.dob = dob;
 		this.expiration = expiration;
 		this.height = height;
@@ -56,8 +57,8 @@ final Font HUGE_FONT = new Font("Normal font",Font.BOLD,65);
 		this.city = city;
 		this.zip = zip;
 		this.state = state;
-		fullAddress = (address+", "+city+", "+state+", "+zip);
-		
+		fullAddress = (address + ", " + city + ", " + state + ", " + zip);
+
 		try {
 			pic = ImageIO.read(new File(pathChosen));
 			resizedPic = pic.getScaledInstance(203, 150, Image.SCALE_DEFAULT);
@@ -66,33 +67,22 @@ final Font HUGE_FONT = new Font("Normal font",Font.BOLD,65);
 			e.printStackTrace();
 		}
 		try {
-			
+
 			template = ImageIO.read(this.getClass().getResourceAsStream("template.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-	
-	
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(template,0,0,this);
+		g.drawImage(template, 0, 0, this);
 		drawLiscense(g);
-		
-		
-		
+
 	}
-	
+
 	public void drawLiscense(Graphics g) {
 		g.drawImage(resizedPic, 0, 0, this);
 		g.setFont(NORMAL_FONT);
@@ -109,30 +99,16 @@ final Font HUGE_FONT = new Font("Normal font",Font.BOLD,65);
 		g.drawString(name, 60, 350);
 		Random r = new Random();
 		g.setFont(NORMAL_FONT);
-		g.drawString(r.nextInt(9999)+"-"+r.nextInt(999)+"-"+r.nextInt(9999), 275, 130);
+		g.drawString(r.nextInt(9999) + "-" + r.nextInt(999) + "-" + r.nextInt(9999), 275, 130);
 		g.setFont(HUGE_FONT);
-		
-		
-	
-		
-		
-		Color c = new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256),r.nextInt(256));
+
+		Color c = new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256), r.nextInt(256));
 		g.setColor(c);
-		
+
 		g.drawString(state, 225, 80);
-	
-	
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//Copyright © 2018 by Evan Coats
-	
+
+	// Copyright © 2018 by Evan Coats
+
 }
